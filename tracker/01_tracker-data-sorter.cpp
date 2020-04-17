@@ -139,7 +139,6 @@ int main()
 
 // running the check and printing out good measurements
 	for(i=0;i<linesize;i++){								// for each time
-//		cout << "This is the count value that is checked: " << print[0][i] << endl;	 // for testing
 		if(print[0][i]>20000){								// if the minimum count check is reached
 			outfile << stime[i];							// write time
 			for(j=1;j<7;j++){								// for each wavelength
