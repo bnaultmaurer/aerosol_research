@@ -40,7 +40,7 @@ int main()
 	vector<double> part(3,0.0);	//holding three elements, No, a, b
 	struct tm now;
 	float daynum;
-	
+
 	cout << "This program generates artifical AOD values, to be used to test particle swarm optimization" << endl << endl;
 
 	init_mie(mie);
@@ -63,14 +63,13 @@ int main()
 	cin >> mystr;
 	fname2 = new char [mystr.size()+1];	/* c_string method */
 	strcpy(fname2,mystr.c_str());
-	
-	outfile.open(fname2,ios::out);	// open output file for AOd at 13 wavelengths 
+
+	outfile.open(fname2,ios::out);	// open output file for AOd at 13 wavelengths
 	if (!outfile.is_open()){
 		cout << "\nUnable to open file " << fname2 << "\n";
 		return 0;
 	}
 
-//	daynum=(now.tm_hour+now.tm_min/60.0+now.tm_sec/3600.0)/24.0;
 	outfile << daynum << " ";
 
 
@@ -80,9 +79,9 @@ int main()
 	}
 	outfile << endl;
 
-	
+
 	return 0;
-}	
+}
 
 void calc_aod(vector<double> &part, vector<double> &Qext, double &tauc)
 {
@@ -167,5 +166,3 @@ void initQ(vector<double> &Qext, string fname)
 
 	return;
 }
-
-
