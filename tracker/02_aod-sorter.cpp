@@ -52,9 +52,7 @@ double wavelength[size] = {440.699, 555.803, 674.855, 778.221, 869.738, 1019.721
 int main()
 {
 	int i, j, linesize=6, pos;						// linesize now is the amount of wavelengths we are using
-//	int measurements=10;
 	double aod[linesize], irr[linesize];			// initalize wavelength, used in functions as definition of wavelength (368.0)
-//	float dtime[linesize];
 	double dtime;
 	ifstream infile;								// set file to read info from
 	ofstream outfile, pso;							// set name for output file
@@ -73,7 +71,6 @@ int main()
 
 	cout << "Enter pressure for this day (mb): ";	// prompts user to input a pressure for given day
 	cin >> pressure;								// defines pressure as what the user inputted
-//	pressure = 983;									// general pressure in millibars (TESTING ONLY)
 
 	infile.open(input.c_str());						// set input file name
 	outfile.open(output.c_str()/*, ios::app*/);		// set output file name and create file // for all runs
@@ -210,8 +207,6 @@ for(i=0;i<linesize;i++){
 //calculates hourangle(h) to use to find m'
 	float hourangle;
 	hourangle = (15*PI/180)*(12-dtime);					//defines hourangle from decimal time
-//	cout << "dtime in calc_aod is: " << dtime << endl;
-//	cout << "hourangle is: " << hourangle << endl;
 
 //calculates declination
 	float declination;
