@@ -22,7 +22,7 @@
 
 using namespace std;		// required for c++ file routines
 
-#define channels 6 		// number of wavelength channels to use for optimization
+#define channels 6 		    // number of wavelength channels to use for optimization
 #define particles 50		// number of particles in the swarm
 #define PI 3.1415192654		// the constant PI
 #define CONV_FACT 1.0E-4	// convert microns to cm
@@ -175,15 +175,8 @@ int main()
 				//outfile << "Initial Fitness f0["<<i<<"]: " << f0[i] << endl;
 				//cout << "Initial Fitness f0["<<i<<"]: " << f0[i] << endl;
 			}
-//			cout << "initializing swarm..." << endl;
 			init_swarm(swarm,param_min,param_max); 				// initialize the swarm
 
-/*			calc_fitness(aodm, aodc, fg);						//for testing
-			for(i=0;i<particles;i++){
-				cout << "Initial global fitness fg: " << fg[i] << endl;
-			}
-*/
-			cout << "Generation: " << endl;
 			while(gen<gen_max){ 								// let the swarm evolve
 				cout << gen << "\t" << N_t << "\t" << endl;
 				for(i=0;i<particles;i++){ 						// cycle through particles
@@ -211,10 +204,8 @@ int main()
 						cout << "Scouts made a difference" << endl;
 					}
 				}
-//				cout << "updating the swarm..." << endl;		// for testing
 				update_swarm(swarm, Pl, Pg, param_min, param_max);	// update swarm based off equation
 
-//				cout << "checking stop condition..." << endl;	// for testing
 				if (abs(Pg[0]-Pg0[0])/Pg0[0] < 1.0E-7 && abs(Pg[1]-Pg0[1])/Pg0[1] < 1.0E-7 && abs(Pg[2]-Pg0[2])/Pg0[2] < 1.0E-7){
 					N_t+=1; 			// if no significant change update number of trials for no change
 				}
